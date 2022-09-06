@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<style> .btn{border:1px solid black; padding:5px;display:inline-block} </style>
+</head>
+	<body>
+	<h1>Pennsylvania Turnpike Commission Protoype Toll Calculator</h1>
+
+    <p>Select the interchange that you will be getting on the Pennsylvania Turnpike from the following pull-down menu.</p>
+    
+   <form action ="/interchangeRequest"> 
+    <label for="enterInterchangeLabel"></label>
+
+    <select name="enterInterchange" id="enterInterchangeID">
+      <option value="30 - Warrendale">30 - Warrendale</option>
+      <option value="39 - Butler Valley">39 - Butler Valley</option>
+      <option value="48 - Allegheny Valley">48 - Allegheny Valley</option>
+      <option value="57 - Pittsburgh">57 - Pittsburgh</option>
+      <option value="67 - Irwin">67 - Irwin</option>
+      <option value="75 - New Stanton">75 - New Stanton</option>
+      <option value="91 - Donegal">91 - Donegal</option>
+      <option value="110 - Somerset">110 - Somerset</option>
+      <option value="146 - Bedford">146 - Bedford</option>
+      <option value="161 - Breezewood">161 - Breezewood</option>
+      <option value="180 - Fort Littleton">180 Fort Littleton</option>
+      <option value="189 - Willow Hil">189 - Willow Hil</option>
+      <option value="201 - Blue Mountain">201 - Blue Mountain</option>
+      <option value="226 - Carlisle">226 - Carlisle</option>
+      <option value="236 - Gettysburg Pike">236 - Gettysburg Pike</option>
+      <option value="242 - Harrisburg West Shore">242 - Harrisburg West Shore</option>
+      <option value="247 - Harrisburg East">247 - Harrisburg East</option>
+      <option value="266 - Lebanon-Lancaster">266 - Lebanon-Lancaster</option>
+      <option value="286 - Reading">286 - Reading</option>
+      <option value="298 - Morgantown">298 - Morgantown</option>
+      <option value="312 - Downingtown">312 - Downingtown</option>
+      <option value="320 - SR29">320 - SR29</option>
+      <option value="326 - Valley Forge">326 - Valley Forge</option>
+      <option value="333 - Norristown">333 - Norristown</option>
+      <option value="339 - Fort Washington">339 - Fort Washington</option>
+      <option value="340 - Virginia Dr">340 - Virginia Dr</option>
+      <option value="343 - Willow Grove">343 - Willow Grove</option>
+      <option value="351 - Bensalem">351 - Bensalem</option>
+      <option value="352 - Streed Rd">352 - Streed Rd</option>
+      <option value="353 - Neshaminy Falls">353 - Neshaminy Falls</option>
+
+    </select> 
+
+    <p>Select the interchange that you will be getting off the Pennsylvania Turnpike from the following pull-down menu.</p>
+
+    <label for="exitInterchangeLabel"></label>
+
+    <select name="exitInterchange" id="exitInterchangeID">
+      <option value="30 - Warrendale">30 - Warrendale</option>
+      <option value="39 - Butler Valley">39 - Butler Valley</option>
+      <option value="48 - Allegheny Valley">48 - Allegheny Valley</option>
+      <option value="57 - Pittsburgh">57 - Pittsburgh</option>
+      <option value="67 - Irwin">67 - Irwin</option>
+      <option value="75 - New Stanton">75 - New Stanton</option>
+      <option value="91 - Donegal">91 - Donegal</option>
+      <option value="110 - Somerset">110 - Somerset</option>
+      <option value="146 - Bedford">146 - Bedford</option>
+      <option value="161 - Breezewood">161 - Breezewood</option>
+      <option value="180 - Fort Littleton">180 Fort Littleton</option>
+      <option value="189 - Willow Hil">189 - Willow Hil</option>
+      <option value="201 - Blue Mountain">201 - Blue Mountain</option>
+      <option value="226 - Carlisle">226 - Carlisle</option>
+      <option value="236 - Gettysburg Pike">236 - Gettysburg Pike</option>
+      <option value="242 - Harrisburg West Shore">242 - Harrisburg West Shore</option>
+      <option value="247 - Harrisburg East">247 - Harrisburg East</option>
+      <option value="266 - Lebanon-Lancaster">266 - Lebanon-Lancaster</option>
+      <option value="286 - Reading">286 - Reading</option>
+      <option value="298 - Morgantown">298 - Morgantown</option>
+      <option value="312 - Downingtown">312 - Downingtown</option>
+      <option value="320 - SR29">320 - SR29</option>
+      <option value="326 - Valley Forge">326 - Valley Forge</option>
+      <option value="333 - Norristown">333 - Norristown</option>
+      <option value="339 - Fort Washington">339 - Fort Washington</option>
+      <option value="340 - Virginia Dr">340 - Virginia Dr</option>
+      <option value="343 - Willow Grove">343 - Willow Grove</option>
+      <option value="351 - Bensalem">351 - Bensalem</option>
+      <option value="352 - Streed Rd">352 - Streed Rd</option>
+      <option value="353 - Neshaminy Falls">353 - Neshaminy Falls</option>
+
+    </select>
+    <!-- <p>How will you be paying your toll, E-ZPass or cash?</p> -->  
+    <br><br>
+
+    <label for = "paymentMethod">How will you be paying your toll, E-ZPass or cash?</label>
+    <select name='paymentMethod' id="paymentMethodID">
+        <option value = "E-ZPass">E-ZPass</option>
+        <option value = "Cash">Cash</option>
+    </select>
+</form> 
+
+    
+    <br>
+    <input type="button" class="btn btn-primary" id="btn_getToll" value="Get Toll">
+
+	<script>
+
+		var ipAddressAndPort = "127.0.0.1:8080";
+
+		var enterInterchange, exitInterchange, paymentMethod;
+        
+        $('#btn_getToll').click(function(){
+            enterInterchange = $("#enterInterchangeID").val();
+            exitInterchange = $("#exitInterchangeID").val();
+            paymentMethod = $("#paymentMethodID").val();
+            
+            // console.log("Interchange entrance: " +enterInterchange);
+            // console.log("Interchange exit: " +exitInterchange);
+            // console.log("Payment method: "+paymentMethod);
+
+            $.get('http://' + ipAddressAndPort + '/interchangeRequest',{'enterInterchange': enterInterchange,
+                    'exitInterchange': exitInterchange1,'paymentMethod': paymentMethod1}, function(data0){
+			// alert(data['APIMessage']);
+            console.log('yeehaw');
+            // console.log(data['APIMessage']);
+            // console.log(data['latitude1']);
+
+            var lat1= data0['latitude1'];
+            var lat2= data0['latitude2'];
+            var long1=data0['long1'];
+            var long2= data0['long2'];
+            // console.log(lat1,lat2,long1,long2);
+
+            var googleAPIurl =  "https://api.distancematrix.ai/maps/api/distancematrix/json?origins="+lat1+","+long1+"&destinations="+lat2+","+long2+"&units=imperial&key=9YNnwFl6LLjk4tuYez6s0qRA0dz6W";
+            
+            $.getJSON(googleAPIurl,function(data){
+                // console.log('ying you should be seeing the goods');
+                console.log(data);
+
+                let distance = data.rows[0].elements[0].distance.text;
+                // let distanceMiles = (distance*0.621371).toFixed(2);
+                console.log(distance);
+
+                let duration = data.rows[0].elements[0].duration.text;
+                console.log(duration);
+
+                alert("The toll from "+data0['entraceInterchange']+
+                        " to "+data0['exitInterhange']+
+                        " paying with " +data0['paymentMethod']+ 
+                        " is " +data0['tollAmount']+
+                        ". The distance is "+distance+
+                        " and the estimated driving time is "+duration+".");
+            });
+
+
+        })
+		});
+
+	</script>
+	</body>
+</html>
